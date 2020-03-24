@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Dropdown from "react-dropdown";
 import parse from "html-react-parser";
 
@@ -28,6 +27,7 @@ export default function App() {
     // };
     fetchShow()
       .then(res => {
+        console.log('Main Res -', res);
         setShow(res.data);
         setSeasons(formatSeasons(res.data._embedded.episodes));
       })
